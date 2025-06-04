@@ -4,12 +4,18 @@
   description: Lint commit message against @commitlint/config-conventional rules
   language: node
   entry: commitlint
-  args: ["--edit"]
+  args: [--edit]
   stages: [commit-msg]
-- id: commitlint-all
-  name: Check ALL commit messages using commitlint
-  description: Lint ALL commit messages against @commitlint/config-conventional rules
+  additional_dependencies:
+    - '@commitlint/config-conventional@19.8.1'
+- id: commitlint-ci
+  name: Check commit messages using commitlint
+  description: Lint recent commit messages against @commitlint/config-conventional rules
   language: node
   entry: commitlint
-  args: ["--from", "--"]
+  args: [--from-last-tag, --verbose]
   stages: [manual]
+  always_run: true
+  verbose: true
+  additional_dependencies:
+    - '@commitlint/config-conventional@19.8.1'
