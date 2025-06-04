@@ -7,7 +7,7 @@
   "author": "Alessandro Cuppari <me@alessandrojcm.dev>",
   "license": "MIT",
   "bin": {
-    "commitlint": "./node_modules/@commitlint/cli/lib/cli.js"
+    "commitlint": "./node_modules/@commitlint/cli/cli.js"
   },
   "dependencies": {
     "@commitlint/cli": "19.8.1",
